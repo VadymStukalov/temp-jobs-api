@@ -36,6 +36,9 @@ app.use(cors());
 app.use(xss());
 
 // routes
+app.use("/", (req, res) => {
+  res.send(`<h1>Jobs API</h1> <a href = "/docs">Documentation</a>`);
+});
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/jobs", auth, jobsRouter);
 
